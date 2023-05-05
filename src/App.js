@@ -1,11 +1,12 @@
 import Header from "./components/Header";
+import FeebackItem from "./components/FeedbackItem";
 
 function App() {
   return (
     <>
-      <Header text = {'Anirudh'} />
+      <Header />
       <div className="container">
-        <h1>My App</h1>
+        <FeebackItem />
       </div>
     </>
   );
