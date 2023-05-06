@@ -4,6 +4,7 @@ import FeedbackItem  from "./components/FeedBackItem";
 import FeedbackList from "./components/FeedbackList";
 import FeedbackData from "./data/FeedbackData";
 import Card from "./components/shared/Card";
+import FeedbackStats from "./components/FeedbackStats";
 
 function App({handleDelete}) {
 
@@ -21,6 +22,9 @@ const deleteFeedback = ((id) => {
     <>
       <Header />
       <div className="container">
+        <FeedbackStats 
+          feedback={feedback} 
+        />
         <FeedbackList 
           feedback={feedback}
           handleDelete={deleteFeedback}
