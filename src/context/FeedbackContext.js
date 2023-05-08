@@ -41,6 +41,15 @@ export const FeedbackProvider = ({children}) => {
         }
     };
 
+    //UPDATE FEEDBACK ITEM//
+    const updateFeedback = (id, updItem) => {
+        setFeedback(
+            feedback.map((item) => (
+            item.id === id ? {...item, ...updItem} : item)
+            )
+        )
+    }
+
     //SET ITEM TO BE UPDATED//
     const editFeedback = (item) => {
         setFeedbackEdit({
@@ -53,10 +62,11 @@ export const FeedbackProvider = ({children}) => {
     <FeedbackContext.Provider 
         value={{
             feedback,
+            feedbackEdit, //Actual piece of state that holds the item and boolean
             deleteFeedback,
             addFeedback,
             editFeedback, //Function that runs when the edit icon is clicked//
-            feedbackEdit //Actual piece of state that holds the item and boolean
+            updateFeedback,
         }}
     >
             {children}
